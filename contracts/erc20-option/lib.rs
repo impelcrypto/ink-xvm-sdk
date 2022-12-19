@@ -37,16 +37,14 @@ mod erc20 {
     use ink_prelude::vec::Vec;
 
     #[ink(storage)]
-    pub struct Erc20 {
-        // evm_address: [u8; 20],
-    }
+    pub struct Erc20 {}
 
     impl Erc20 {
-        /// Create new ERC20 abstraction from given contract address.
-        // #[ink(constructor)]
-        // pub fn new(evm_address: [u8; 20]) -> Self {
-        //     Self { evm_address }
-        // }
+        /// Create new ERC20 abstraction.
+        #[ink(constructor)]
+        pub fn new() -> Self {
+            Self {}
+        }
 
         /// Send `approve` call to ERC20 contract.
         #[ink(message)]
