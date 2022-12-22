@@ -62,7 +62,7 @@ mod erc20 {
 
         /// Send `transfer` call to ERC20 contract.
         #[ink(message)]
-        pub fn transfer(&mut self, to: [u8; 20], value: u128,erc20_address: [u8; 20]) -> bool {
+        pub fn transfer(&mut self, to: [u8; 20], value: u128, erc20_address: [u8; 20]) -> bool {
             let encoded_input = Self::transfer_encode(to.into(), value.into());
             self.env()
                 .extension()
@@ -76,7 +76,7 @@ mod erc20 {
 
         /// Send `transfer_from` call to ERC20 contract.
         #[ink(message)]
-        pub fn transfer_from(&mut self, from: [u8; 20], to: [u8; 20], value: u128,erc20_address: [u8; 20]) -> bool {
+        pub fn transfer_from(&mut self, from: [u8; 20], to: [u8; 20], value: u128, erc20_address: [u8; 20]) -> bool {
             let encoded_input = Self::transfer_from_encode(from.into(), to.into(), value.into());
             self.env()
                 .extension()
